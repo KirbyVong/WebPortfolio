@@ -84,8 +84,10 @@ body {
 .profile-container {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 .profile-frame {
@@ -151,6 +153,18 @@ body {
     text-align: justify;
 }
 
+.location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #00ccff;
+    font-size: 1.1rem;
+}
+
+.location i {
+    font-size: 1rem;
+}
+
 /* Responsive Design for Hero Section */
 @media (max-width: 768px) {
     .container {
@@ -172,6 +186,10 @@ body {
 
     .hero-description {
         text-align: center;
+    }
+
+    .location {
+        font-size: 1rem;
     }
 }
 
@@ -285,4 +303,57 @@ body {
     margin-top: 2rem;
     border-radius: 20px;
     backdrop-filter: blur(5px);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.email, .location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #00ccff;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.email:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.email i, .location i {
+    font-size: 1rem;
+}
+
+/* Update responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .profile-frame {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-description {
+        text-align: center;
+    }
+
+    .email, .location {
+        font-size: 1rem;
+    }
 }
