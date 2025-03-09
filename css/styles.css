@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
 }
 
 html, body {
@@ -10,7 +11,7 @@ html, body {
 }
 
 body {
-    background: radial-gradient(circle at top, rgba(5, 5, 12, 0.3), rgb(0, 0, 0));
+    background: radial-gradient(circle at top, rgba(2, 2, 5, 0.7), rgb(0, 0, 0));
     color: white;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
@@ -28,8 +29,6 @@ body {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    
 }
 
 .socials-section {
@@ -63,22 +62,112 @@ body {
     font-size: 1.3rem;
 }
 
-/* Optional animated gradient effect
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Hero Section Styles */
+.hero-section {
+    padding: 2rem;
+    margin-top: 2rem;
+    /* background: rgba(0, 204, 255, 0.1); */
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
 }
 
-.animated-bg {
-    background: linear-gradient(45deg, #1e1e2e, #3a3a6a, #1e1e2e);
-    background-size: 200% 200%;
-    animation: gradientAnimation 10s ease infinite;
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.profile-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-frame {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(45deg, rgba(0, 204, 255, 0.8), rgba(0, 204, 255, 0.2));
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-frame::before {
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(45deg, rgba(0, 204, 255, 0.8), rgba(0, 204, 255, 0.2));
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.profile-frame img {
     width: 100%;
     height: 100%;
-    z-index: -1;
-    opacity: 0.8;
-} */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #fff, #00ccff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    color: #00ccff;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+}
+
+/* Responsive Design for Hero Section */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .profile-frame {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-description {
+        text-align: center;
+    }
+}
