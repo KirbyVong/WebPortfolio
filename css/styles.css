@@ -426,6 +426,27 @@ body {
     padding: 8px 12px;
     border-radius: 8px;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: #00ccff;
+    border-radius: 0 2px 2px 0;
+    transition: height 0.3s ease;
+}
+
+.nav-item.active {
+    color: #00ccff;
+    background: rgba(0, 204, 255, 0.1);
+}
+
+.nav-item.active::before {
+    height: 100%;
 }
 
 .nav-item:hover {
