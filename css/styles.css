@@ -390,11 +390,6 @@ body {
     transition: color 0.3s ease;
 }
 
-.email:hover {
-    color: white;
-    cursor: pointer;
-}
-
 .email i, .location i {
     font-size: 1rem;
 }
